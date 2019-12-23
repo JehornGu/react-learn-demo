@@ -1,0 +1,51 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <div id="root"></div>
+  <div id="root2"></div>
+
+  <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+  <script type="text/babel">
+
+    //#region 1.1 函数组件
+    // 声明一个函数组件
+    function MyFnComponent(props) {
+      return <h1>This is {props.name}.</h1>
+    }
+
+    // 使用方式
+    // 通过先前的 ReactDOM.render() 方法
+    ReactDOM.render(
+      <MyFnComponent name="Lily" />,
+      document.querySelector('#root')
+    );
+    //#endregion
+
+    //#region 1.2 class 组件
+    class MyClassComponent extends React.Component {
+      render() {
+        return <h1>This is {this.props.name}.</h1>;
+      }
+    }
+
+    ReactDOM.render(
+      <MyClassComponent name="Bob" />,
+      document.querySelector('#root2')
+    );
+    //#endregion
+
+  </script>
+</body>
+
+</html>
